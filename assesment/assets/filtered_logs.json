@@ -1,0 +1,24 @@
+{
+    "actions": [
+        {
+            "COMMAND": null,
+            "RESPONSE": null
+        },
+        {
+            "COMMAND": "[1731919500.412][INFO]: [29cb64dc917672044076dea579fe2f2a] COMMAND InitSession {\"capabilities\": {\"firstMatch\": [ {\"browserName\": \"chrome\",\"goog:chromeOptions\": {\"args\": [ \"--remote-allow-origins=*\" ],\"binary\": \"C:\\\\Program Files\\\\Google\\\\Chrome\\\\Application\\\\chrome.exe\",\"extensions\": [  ]},\"goog:loggingPrefs\": {\"browser\": \"ALL\",\"driver\": \"ALL\"}} ]}}",
+            "RESPONSE": "[1731919502.064][INFO]: [29cb64dc917672044076dea579fe2f2a] RESPONSE InitSession {\"capabilities\": {\"acceptInsecureCerts\": false,\"browserName\": \"chrome\",\"browserVersion\": \"131.0.6778.70\",\"chrome\": {\"chromedriverVersion\": \"131.0.6778.69 (77e2244bbcda3ab9362d5b8aeeb006a86a6d4832-refs/branch-heads/6778@{#2141})\",\"userDataDir\": \"C:\\\\Users\\\\visha\\\\AppData\\\\Local\\\\Temp\\\\scoped_dir6192_534175923\"},\"fedcm:accounts\": true,\"goog:chromeOptions\": {\"debuggerAddress\": \"localhost:63626\"},\"networkConnectionEnabled\": false,\"pageLoadStrategy\": \"normal\",\"platformName\": \"windows\",\"proxy\": {},\"setWindowRect\": true,\"strictFileInteractability\": false,\"timeouts\": {\"implicit\": 0,\"pageLoad\": 300000,\"script\": 30000},\"unhandledPromptBehavior\": \"dismiss and notify\",\"webauthn:extension:credBlob\": true,\"webauthn:extension:largeBlob\": true,\"webauthn:extension:minPinLength\": true,\"webauthn:extension:prf\": true,\"webauthn:virtualAuthenticators\": true},\"sessionId\": \"29cb64dc917672044076dea579fe2f2a\"}"
+        },
+        {
+            "COMMAND": "[1731919502.578][INFO]: [29cb64dc917672044076dea579fe2f2a] COMMAND MaximizeWindow {}",
+            "RESPONSE": "[1731919502.740][INFO]: [29cb64dc917672044076dea579fe2f2a] RESPONSE MaximizeWindow {\"height\": 736,\"width\": 1382,\"x\": -8,\"y\": -8}"
+        },
+        {
+            "COMMAND": "[1731919502.803][INFO]: [29cb64dc917672044076dea579fe2f2a] COMMAND Navigate {\"url\": \"https://www.youtube.com/\"}",
+            "RESPONSE": "[1731919509.780][INFO]: [29cb64dc917672044076dea579fe2f2a] RESPONSE Navigate"
+        },
+        {
+            "COMMAND": "[1731919509.809][INFO]: [29cb64dc917672044076dea579fe2f2a] COMMAND GetUrl {}",
+            "RESPONSE": "[1731919510.051][INFO]: [29cb64dc917672044076dea579fe2f2a] RESPONSE GetUrl \"https://www.youtube.com/\""
+        }
+    ]
+}

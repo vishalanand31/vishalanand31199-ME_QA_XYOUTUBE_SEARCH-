@@ -1,0 +1,152 @@
+[1731919499.625][INFO]: Starting ChromeDriver 131.0.6778.69 (77e2244bbcda3ab9362d5b8aeeb006a86a6d4832-refs/branch-heads/6778@{#2141}) on port 7378
+[1731919499.627][INFO]: Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping ChromeDriver safe.
+[1731919499.671][INFO]: ChromeDriver was started successfully on port 7378
+[1731919500.412][INFO]: [29cb64dc917672044076dea579fe2f2a] COMMAND InitSession {
+   "capabilities": {
+      "firstMatch": [ {
+         "browserName": "chrome",
+         "goog:chromeOptions": {
+            "args": [ "--remote-allow-origins=*" ],
+            "binary": "C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe",
+            "extensions": [  ]
+         },
+         "goog:loggingPrefs": {
+            "browser": "ALL",
+            "driver": "ALL"
+         }
+      } ]
+   }
+}
+[1731919500.414][INFO]: Populating Preferences file: {
+   "alternate_error_pages": {
+      "enabled": false
+   },
+   "autofill": {
+      "enabled": false
+   },
+   "browser": {
+      "check_default_browser": false
+   },
+   "distribution": {
+      "import_bookmarks": false,
+      "import_history": false,
+      "import_search_engine": false,
+      "make_chrome_default_for_user": false,
+      "skip_first_run_ui": true
+   },
+   "dns_prefetching": {
+      "enabled": false
+   },
+   "profile": {
+      "content_settings": {
+         "pattern_pairs": {
+            "https://*,*": {
+               "media-stream": {
+                  "audio": "Default",
+                  "video": "Default"
+               }
+            }
+         }
+      },
+      "default_content_setting_values": {
+         "geolocation": 1
+      },
+      "default_content_settings": {
+         "geolocation": 1,
+         "mouselock": 1,
+         "notifications": 1,
+         "popups": 1,
+         "ppapi-broker": 1
+      },
+      "password_manager_enabled": false
+   },
+   "safebrowsing": {
+      "enabled": false
+   },
+   "search": {
+      "suggest_enabled": false
+   },
+   "translate": {
+      "enabled": false
+   }
+}
+[1731919500.415][INFO]: Populating Local State file: {
+   "background_mode": {
+      "enabled": false
+   },
+   "ssl": {
+      "rev_checking": {
+         "enabled": false
+      }
+   }
+}
+[1731919500.416][INFO]: ChromeDriver supports communication with Chrome via pipes. This is more reliable and more secure.
+[1731919500.416][INFO]: Use the --remote-debugging-pipe Chrome switch instead of the default --remote-debugging-port to enable this communication mode.
+[1731919500.418][INFO]: Launching chrome: "C:\Program Files\Google\Chrome\Application\chrome.exe" --allow-pre-commit-input --disable-background-networking --disable-backgrounding-occluded-windows --disable-client-side-phishing-detection --disable-default-apps --disable-hang-monitor --disable-popup-blocking --disable-prompt-on-repost --disable-sync --enable-automation --enable-logging --log-level=0 --no-first-run --no-service-autorun --password-store=basic --remote-allow-origins=* --remote-debugging-port=0 --test-type=webdriver --use-mock-keychain --user-data-dir="C:\Users\visha\AppData\Local\Temp\scoped_dir6192_534175923" data:,
+[1731919502.007][INFO]: resolved localhost to ["::1","127.0.0.1"]
+[1731919502.064][INFO]: [29cb64dc917672044076dea579fe2f2a] RESPONSE InitSession {
+   "capabilities": {
+      "acceptInsecureCerts": false,
+      "browserName": "chrome",
+      "browserVersion": "131.0.6778.70",
+      "chrome": {
+         "chromedriverVersion": "131.0.6778.69 (77e2244bbcda3ab9362d5b8aeeb006a86a6d4832-refs/branch-heads/6778@{#2141})",
+         "userDataDir": "C:\\Users\\visha\\AppData\\Local\\Temp\\scoped_dir6192_534175923"
+      },
+      "fedcm:accounts": true,
+      "goog:chromeOptions": {
+         "debuggerAddress": "localhost:63626"
+      },
+      "networkConnectionEnabled": false,
+      "pageLoadStrategy": "normal",
+      "platformName": "windows",
+      "proxy": {
+      },
+      "setWindowRect": true,
+      "strictFileInteractability": false,
+      "timeouts": {
+         "implicit": 0,
+         "pageLoad": 300000,
+         "script": 30000
+      },
+      "unhandledPromptBehavior": "dismiss and notify",
+      "webauthn:extension:credBlob": true,
+      "webauthn:extension:largeBlob": true,
+      "webauthn:extension:minPinLength": true,
+      "webauthn:extension:prf": true,
+      "webauthn:virtualAuthenticators": true
+   },
+   "sessionId": "29cb64dc917672044076dea579fe2f2a"
+}
+[1731919502.578][INFO]: [29cb64dc917672044076dea579fe2f2a] COMMAND MaximizeWindow {
+}
+[1731919502.579][INFO]: Waiting for pending navigations...
+[1731919502.670][INFO]: Done waiting for pending navigations. Status: ok
+[1731919502.739][INFO]: Waiting for pending navigations...
+[1731919502.740][INFO]: Done waiting for pending navigations. Status: ok
+[1731919502.740][INFO]: [29cb64dc917672044076dea579fe2f2a] RESPONSE MaximizeWindow {
+   "height": 736,
+   "width": 1382,
+   "x": -8,
+   "y": -8
+}
+[1731919502.803][INFO]: [29cb64dc917672044076dea579fe2f2a] COMMAND Navigate {
+   "url": "https://www.youtube.com/"
+}
+[1731919502.803][INFO]: Waiting for pending navigations...
+[1731919502.812][INFO]: Done waiting for pending navigations. Status: ok
+[1731919503.421][INFO]: Waiting for pending navigations...
+[1731919509.780][INFO]: Done waiting for pending navigations. Status: ok
+[1731919509.780][INFO]: [29cb64dc917672044076dea579fe2f2a] RESPONSE Navigate
+[1731919509.809][INFO]: [29cb64dc917672044076dea579fe2f2a] COMMAND GetUrl {
+}
+[1731919509.809][INFO]: Waiting for pending navigations...
+[1731919509.810][INFO]: Done waiting for pending navigations. Status: ok
+[1731919510.038][INFO]: Waiting for pending navigations...
+[1731919510.051][INFO]: Done waiting for pending navigations. Status: ok
+[1731919510.051][INFO]: [29cb64dc917672044076dea579fe2f2a] RESPONSE GetUrl "https://www.youtube.com/"
+[1731919510.151][INFO]: [29cb64dc917672044076dea579fe2f2a] COMMAND CloseWindow {
+}
+[1731919510.528][WARNING]: Processing messages while being disconnected
+[1731919510.528][SEVERE]: Unable to receive message from renderer
+[1731919512.152][INFO]: [29cb64dc917672044076dea579fe2f2a] RESPONSE CloseWindow [  ]
