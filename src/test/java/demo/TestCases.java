@@ -4,6 +4,8 @@ import java.time.Duration;
 import java.util.List;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.ElementNotInteractableException;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -38,76 +40,74 @@ public class TestCases {
     // Go to YouTube.com and Assert you are on the correct URL. Click on “About” at
     // the bottom of the sidebar, and print the message on the screen.
 
-@Test(priority = 1, enabled = true)
-public void testCase01() {
-    try {
-        System.out.println("Start Test case: Go to Youtube.com and print About Section Contents ");
-        driver.get("https://www.youtube.com/");
-        Assert.assertEquals(driver.getCurrentUrl(), "https://www.youtube.com/", "URL does not Match");
+    @Test(priority = 1, enabled = true)
+    public void testCase01() {
+        try {
+            System.out.println("Start Test case: Go to Youtube.com and print About Section Contents ");
+            driver.get("https://www.youtube.com/");
+            Assert.assertEquals(driver.getCurrentUrl(), "https://www.youtube.com/", "URL does not Match");
 
-        // Replace Thread.sleep with WebDriverWait to ensure proper visibility of the About link
-        WebElement aboutLink = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//a[text()='About']")));
-        seleniumWrapper.scrollBy(0, 7000);
+            seleniumWrapper.scrollBy(0, 7000);
 
-        seleniumWrapper.clickElement(By.xpath("//a[text()='About']"));
+            seleniumWrapper.clickElement(By.xpath("//a[text()='About']"));
 
-        // Wait for visibility of the About section and print the text
-        WebElement about = seleniumWrapper.waitForVisibility(By.xpath("//main[@id='content']"));
-        String text = about.getText();
-        System.out.println("About Section Text: " + text);
-
-        System.out.println("End Test case: About Section Contents Printed Successfully");
-    } catch (Exception e) {
-        e.printStackTrace();
-        Assert.fail("Test case 01 failed due to an exception: " + e.getMessage());
-    }
-}
-
-@Test(priority = 2, enabled = true)
-public void testCase02() {
-    try {
-        System.out.println("Start Test case: Go to Youtube.com and print Movies Tab Contents");
-        driver.get("https://www.youtube.com/");
-        seleniumWrapper.sleep(2000);
-        
-        seleniumWrapper.clickElement(By.xpath("//a[@title='Movies']"));
-        seleniumWrapper.sleep(2000);
-
-        // Use WebDriverWait to ensure top selling section is visible before interacting
-        WebElement topSellingSection = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//span[text()='Top selling']")));
-        seleniumWrapper.moveToElement(topSellingSection);
-        seleniumWrapper.sleep(3000);
-
-        WebElement topSellingButton = driver.findElement(By.xpath(
-                "(//*[@id='right-arrow']/ytd-button-renderer/yt-button-shape/button/yt-touch-feedback-shape/div/div[2])[1]"));
-        
-        for (int i = 0; i < 3; i++) {
-            topSellingButton.click();
-            seleniumWrapper.sleep(3000);
+            WebElement about = seleniumWrapper.waitForVisibility(By.xpath("//main[@id='content']"));
+            String text = about.getText();
+            System.out.println(text);
+            System.out.println("End Test case: About Section Contents Printed Successfully");
+        } catch (Exception e) {
+            e.printStackTrace();
+            Assert.fail("Test case 01 failed due to an exception: " + e.getMessage());
         }
-
-        WebElement lastMovie = seleniumWrapper.waitForVisibility(By.xpath("//*[@id='items']/ytd-grid-movie-renderer[16]"));
-        String movieRating = seleniumWrapper.getText(
-                By.xpath("//*[@id='items']/ytd-grid-movie-renderer[16]/ytd-badge-supported-renderer/div[2]"));
-        System.out.println("Movie Rating: " + movieRating);
-
-        sa.assertTrue(movieRating.contains("U"), "The movie is not marked 'U' for Mature.");
-
-        String movieGenre = seleniumWrapper.getText(By.xpath("//*[@id='items']/ytd-grid-movie-renderer[16]/a/span"));
-        System.out.println("Movie Genre: " + movieGenre);
-
-        sa.assertTrue(movieGenre.contains("Comedy") || movieGenre.contains("Animation"),
-                "The movie is neither 'Comedy' nor 'Animation'.");
-        sa.assertAll();
-
-        System.out.println("End Test case: Movies Tab Contents Printed Successfully");
-    } catch (Exception e) {
-        e.printStackTrace();
-        Assert.fail("Test case 02 failed due to an exception: " + e.getMessage());
     }
-}
-@Test(priority = 3, enabled = true)
-    public void testCase_03() {
+
+
+    @Test(priority = 2, enabled = true)
+    public void testCase02() {
+        
+        try {
+            System.out.println("Start Test case: Go to Youtube.com and print Movies Tab Contents");
+            driver.get("https://www.youtube.com/");
+            seleniumWrapper.sleep(2000);
+            seleniumWrapper.clickElement(By.xpath("//a[@title='Movies']"));
+            seleniumWrapper.sleep(2000);
+
+            WebElement topSellingSection = driver.findElement(By.xpath("//span[text()='Top selling']"));
+            seleniumWrapper.moveToElement(topSellingSection);
+            seleniumWrapper.sleep(3000);
+
+            WebElement topSellingButton = driver.findElement(By.xpath(
+                    "(//*[@id='right-arrow']/ytd-button-renderer/yt-button-shape/button/yt-touch-feedback-shape/div/div[2])[1]"));
+            for (int i = 0; i < 3; i++) {
+                topSellingButton.click();
+                seleniumWrapper.sleep(3000);
+            }
+
+            WebElement lastMovie = seleniumWrapper
+                    .waitForVisibility(By.xpath("//*[@id='items']/ytd-grid-movie-renderer[16]"));
+            String movieRating = seleniumWrapper.getText(
+                    By.xpath("//*[@id='items']/ytd-grid-movie-renderer[16]/ytd-badge-supported-renderer/div[2]"));
+            System.out.println("Movie Rating:" + movieRating);
+
+            sa.assertTrue(movieRating.contains("U"), "The movie is not marked 'U' for Mature.");
+
+            String movieGenre = seleniumWrapper
+                    .getText(By.xpath("//*[@id='items']/ytd-grid-movie-renderer[16]/a/span"));
+            System.out.println("Movie Genre" + movieGenre);
+
+            sa.assertTrue(movieGenre.contains("Comedy") || movieGenre.contains("Animation"),
+                    "The movie is neither 'Comedy' nor 'Animation'.");
+            sa.assertAll();
+            System.out.println("End Test case: Movies Tab Contents Printed Successfully");
+        } catch (Exception e) {
+            e.printStackTrace();
+            Assert.fail("Test case 02 failed due to an exception: " + e.getMessage());
+        }
+    }
+
+
+    @Test(priority = 3, enabled = true)
+    public void testCase03() {
         try {
             System.out.println("Start Test case: Go to Youtube.com and print Music Tab Contents ");
             driver.get("https://www.youtube.com/");
@@ -119,19 +119,17 @@ public void testCase02() {
             seleniumWrapper.scrollBy(0, 600);
             Thread.sleep(4000);
             for (int i = 0; i < 3; i++) {
-                WebElement rightButton = driver.findElement(By.xpath(
-                        "(//*[@id='right-arrow']/ytd-button-renderer/yt-button-shape/button/yt-touch-feedback-shape/div/div[2])[1]"));
+                WebElement rightButton = driver.findElement(By.xpath("(//div[@class='yt-spec-touch-feedback-shape yt-spec-touch-feedback-shape--touch-response'])[114]"));
                 rightButton.click();
                 Thread.sleep(3000);
             }
 
-            WebElement playlistName = driver
-                    .findElement(By.xpath("//span[text()='Bollywood Dance Hitlist']"));
+            WebElement playlistName = driver.findElement(By.xpath("//span[text()='Bollywood Dance Hitlist']"));
             String name = playlistName.getText();
             System.out.println("Playlist Name: " + name);
             Thread.sleep(3000);
 
-            WebElement trackCount = driver.findElement(By.xpath("(//*[@id='video-count-text'])[11]"));
+            WebElement trackCount = driver.findElement(By.xpath("(//div[text()='50 songs'])[4]"));
             String count = trackCount.getText();
             int countInt = Integer.parseInt(count.replaceAll("[^0-9]", ""));
             System.out.println("Track Count: " + count);
@@ -144,6 +142,7 @@ public void testCase02() {
             e.printStackTrace();
         }
     }
+
 
 @Test(priority = 4, enabled = true)
 public void testCase04() {
