@@ -35,7 +35,7 @@ buildDir = 'build'
 test {
     useTestNG() {
         useDefaultListeners = true // generates the test report
-        suites "src/test/resources/testng.xml"
+         suites "src/test/resources/testng.xml"
     }
 
     afterSuite { desc, result ->
